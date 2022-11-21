@@ -10,10 +10,11 @@ class ProductsService{
     find() {
       fetch('https://jsonplaceholder.typicode.com/posts')
         .then(response => response.json())
-          .then((data) => {
-        dataBody.push(data);
-      });
-      return dataBody;
+        .then((data) => {
+          dataBody.push(data);
+        });
+      const newArr = dataBody[0];
+      return newArr;
     };
 
   // generate(){
@@ -29,7 +30,7 @@ class ProductsService{
   // };
 
   create() {
-    const newProduct = {
+    const newUserProduct = {
       id: faker.datatype.uuid(),
       ...data
     };
