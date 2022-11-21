@@ -18,11 +18,11 @@ router.get('/', (req, res) => {
 //   res.json(product);
 // });
 
-// router.post('/', (req, res) => {
-//   const body = req.body;
-//   const newProduct = service.create(body);
-//   res.status(201).json(newProduct);
-// });
+router.post('/', (req, res) => {
+  const body = req.body;
+  const newProduct = service.create(body);
+  res.status(201).json(newProduct);
+});
 
 // router.patch('/:id', (req, res) => {
 //   const {id} = req.params;

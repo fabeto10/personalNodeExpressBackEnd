@@ -1,21 +1,18 @@
 // const faker = require('faker');
-
 const dataBody = [];
-
-fetch('https://jsonplaceholder.typicode.com/posts')
-  .then(response => response.json())
-  .then((data) => {
-    dataBody.push(data);
-    // console.log(dataBody);
-  });
-
-  class ProductsService{
+class ProductsService{
     constructor(){
-      dataBody;
       // this.generate();
+      dataBody;
     };
 
+
     find() {
+      fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(response => response.json())
+          .then((data) => {
+        dataBody.push(data);
+      });
       return dataBody;
     };
 
@@ -31,14 +28,14 @@ fetch('https://jsonplaceholder.typicode.com/posts')
   //   };
   // };
 
-  // create() {
-  //   const newProduct = {
-  //     id: faker.datatype.uuid(),
-  //     ...data
-  //   };
-  //   this.products.push(newProduct);
-  //   return newProduct;
-  // };
+  create() {
+    const newProduct = {
+      id: faker.datatype.uuid(),
+      ...data
+    };
+    this.products.push(newProduct);
+    return newProduct;
+  };
 
 
   // findOne(id) {
